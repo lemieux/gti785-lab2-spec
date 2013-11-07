@@ -49,7 +49,6 @@ Conctent of the qr code
 ```
 
 ## Model Representation
-
 ### File
 ```xml
     <file>
@@ -64,8 +63,8 @@ Conctent of the qr code
     <serverInfo>
         <ipAddress>127.0.0.1</ipAddress>
         <name>Test</name>
-        <status>Bar</status>
-        <localistion>Bar</localistion>
+        <status>OnLine</status>
+        <localisation>Montreal</localisation>
     </serverInfo>
 ```
 
