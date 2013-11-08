@@ -5,33 +5,48 @@ Transfer protocol specification
 ### Variables
 Elements like `{ID}` represents variables that will be replaced at runtime.
 
+### Constants
+All requests must return a value if the request is processed correctly or return a `404` or a `500` when an error occurs
 
 ##Command
 
-### GET /server   action : qrCode
+### GET /
 Return QR Code
 
-### GET /files
+### GET /files/
 Return list of files on the server
 
-### GET /server   action : statut
+### GET /server/
 Return the status of the server
 (name, localisation)
 
-### POST /files   action : upload
-Post(idFile, serverReceiver)
-Post the file from server A to B
+### POST /files/
+
+#### POST Data
+This call sends a file to the remote server
 Return transfer status (Success or failed)
 
-### POST /files   action : receive
-Post(File) 
-Return transfer status (Success or failed)
+### POST /files/transfer/
+####POST Data
+```json
+    {
+        file : {FILE PATH},
+        server : {SERVER ID}
+    }
+```
+
+####Returns
+Return transfer status (`200` or `500`)
+
+### POST /polling
+Returns nothing if nothing happened or the text of the notification to show.
+
 
 ##Definition of a specific command
 
 ### Get QR Code
-Conctent of the qr code
-{Name};{IP Address}
+Content of the QR code
+{URL}
 
 ### Get List of Files
 ```xml
@@ -58,14 +73,14 @@ Conctent of the qr code
     </file>
 ```
 
-### Server Info 
+### Server Info
 ```xml
-    <serverInfo>
-        <ipAddress>127.0.0.1</ipAddress>
+    <server>
+        <url>http://127.0.0.1:8080</url>
         <name>Test</name>
-        <status>OnLine</status>
+        <status>{online|offline}</status>
         <localisation>Montreal</localisation>
-    </serverInfo>
+    </server>
 ```
 
 
