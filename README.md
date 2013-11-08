@@ -30,8 +30,8 @@ Return transfer status (Success or failed)
 ####POST Data
 ```json
     {
-        file : {FILE PATH},
-        server : {SERVER ID}
+        "file" : "{FILE PATH}",
+        "server" : "{SERVER ID}"
     }
 ```
 
@@ -78,7 +78,6 @@ Content of the QR code
     <server>
         <url>http://127.0.0.1:8080</url>
         <name>Test</name>
-        <status>{online|offline}</status>
         <localisation>Montreal</localisation>
     </server>
 ```
