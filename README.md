@@ -38,7 +38,7 @@ Return transfer status (Success or failed)
 ####Returns
 Return transfer status (`200` or `500`)
 
-### POST /polling
+### POST /polling/
 Returns nothing if nothing happened or the text of the notification to show.
 
 
