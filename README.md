@@ -26,6 +26,15 @@ Return the status of the server
 This call sends a file to the remote server
 Return transfer status (Success or failed)
 
+### POST /files/delete/
+#### POST Data
+```json
+    {
+        "file" : "{FILE PATH}"
+    }
+```
+
+
 ### POST /files/transfer/
 ####POST Data
 ```json
