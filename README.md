@@ -51,7 +51,6 @@ Return transfer status (`200` or `500`)
 Returns nothing if nothing happened or the text of the notification to show.
 ####Returns
 A notification.
-`{FILE MODEL REPRESENTATION}`
 
 
 ##Definition of a specific command
