@@ -40,7 +40,7 @@ Return transfer status (Success or failed)
 ```json
     {
         "file" : "{FILE PATH}",
-        "server" : "{SERVER ID}"
+        "server" : "{SERVER URL}"
     }
 ```
 
@@ -49,6 +49,9 @@ Return transfer status (`200` or `500`)
 
 ### POST /polling/
 Returns nothing if nothing happened or the text of the notification to show.
+####Returns
+A notification.
+`{FILE MODEL REPRESENTATION}`
 
 
 ##Definition of a specific command
@@ -90,5 +93,22 @@ Content of the QR code
         <localisation>Montreal</localisation>
     </server>
 ```
+
+### Notification
+```xml
+    <notification>
+        <file>/test.png</file>
+        <action>TRANSFER_FAIL</action>
+    </notification>
+```
+
+#### List of actions possible
+- UPLOAD_SUCCESS : upload successful
+- UPLOAD_FAIL : upload failed
+- TRANSFER_SUCCESS : file transfer succesful
+- TRANSFER_FAIL : file transfer failed
+- FILE_ADDED :  a new file was added to the server
+- FILE_DELETED : a file was deleted
+- FILE_DELETE_FAIL : a delete operation failed
 
 
