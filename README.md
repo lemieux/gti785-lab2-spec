@@ -21,7 +21,7 @@ Return the status of the server
 (name, localisation)
 
 ### POST /files/
-
+The file must be in the `file` variable in the payload.
 #### POST Data
 This call sends a file to the remote server
 Return transfer status (Success or failed)
